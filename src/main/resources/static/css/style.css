@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+#wrap {
+	width: 1200px;
+	height: 800px;
+	margin: 0 auto;
+}
+
+header {
+	height: 100px;
+	bakground-color:#cccccc;
+}
+
+.contents {
+	height: 500px;
+}
+
+.contents > .input-box {
+	width: 400px;
+	height: 800px;
+	
+}
+
+footer {
+	height: 70px;
+	bakground-color:#cccccc;
+}
