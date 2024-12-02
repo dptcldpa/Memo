@@ -2,20 +2,26 @@
 
 #wrap {
 	width: 1200px;
+	height: 800px;
 	margin: 0 auto;
 }
 
 header {
 	height: 100px;
-	background-color:#cccccc;
+	bakground-color:#cccccc;
+}
+
+.contents {
+	height: 500px;
 }
 
 .contents > .input-box {
 	width: 400px;
-	background-color:#cccccc;
+	height: 800px;
+	
 }
 
 footer {
 	height: 70px;
-	background-color:#cccccc;
+	bakground-color:#cccccc;
 }
