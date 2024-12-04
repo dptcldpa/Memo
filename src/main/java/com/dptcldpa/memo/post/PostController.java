@@ -10,12 +10,14 @@ public class PostController {
 
 	// 메모 입력
 	@GetMapping("/create-view")
-	public String memoList() {
+	public String memoInput() {
 		
 		return "post/create";
 		
 	}
 	
-
+	// 메모 리스트
+	@GetMapping("/list-view")
+	public String 
 	
 }
