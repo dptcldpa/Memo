@@ -18,6 +18,10 @@ public class PostController {
 	
 	// 메모 리스트
 	@GetMapping("/list-view")
-	public String 
+	public String memoList() {
+		
+		return "post/list";
+		
+	}
 	
 }
