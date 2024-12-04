@@ -34,4 +34,13 @@ public class UserService {
 		
 	}
 	
+	public boolean getUser(
+			String loginId
+			, String password) {
+		
+
+	}
+	
+	
+	
 }
