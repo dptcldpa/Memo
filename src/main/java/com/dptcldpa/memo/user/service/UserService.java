@@ -1,9 +1,9 @@
 package com.dptcldpa.memo.user.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dptcldpa.memo.common.MD5HashingEncoder;
+import com.dptcldpa.memo.user.domain.User;
 import com.dptcldpa.memo.user.repository.UserRepository;
 
 @Service
@@ -34,10 +34,9 @@ public class UserService {
 		
 	}
 	
-	public boolean getUser(
-			String loginId
-			, String password) {
+	public User getUser(String loginId, String password) {
 		
+		return userRepository.getUser(loginId, password);
 
 	}
 	

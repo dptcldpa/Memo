@@ -3,7 +3,7 @@ package com.dptcldpa.memo.user.repository;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import com.dptcldpa.memo.common.MD5HashingEncoder;
+import com.dptcldpa.memo.user.domain.User;
 
 @Mapper
 public interface UserRepository {
