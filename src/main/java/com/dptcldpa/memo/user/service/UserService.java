@@ -36,10 +36,10 @@ public class UserService {
 	
 	public User getUser(String loginId, String password) {
 		
-		return userRepository.getUser(loginId, password);
+		String encodingPassword = MD5HashingEncoder.encode(password);
+		
+		return userRepository.selectUser(loginId, encodingPassword);
 
 	}
-	
-	
 	
 }
