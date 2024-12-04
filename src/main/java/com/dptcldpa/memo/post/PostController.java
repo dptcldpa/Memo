@@ -8,11 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PostController {
 
-	@GetMapping("/list-view")
+	// 메모 입력
+	@GetMapping("/create-view")
 	public String memoList() {
 		
-		return "post/list";
+		return "post/create";
 		
 	}
+	
+
 	
 }
