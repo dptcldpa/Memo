@@ -15,6 +15,10 @@ header {
 	background-color:#cccccc;
 }
 
+.contents > .memo-input {
+	width: 600px;
+}
+
 footer {
 	height: 70px;
 	background-color:#cccccc;
