@@ -1,12 +1,24 @@
 package com.dptcldpa.memo.post;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.dptcldpa.memo.post.domain.Post;
+import com.dptcldpa.memo.post.service.PostService;
 
 @RequestMapping("/post")
 @Controller
 public class PostController {
+	
+	private PostService postService;
+	
+	public PostController(PostService postService) {
+		this.postService = postService;
+	}
 
 	// 메모 입력
 	@GetMapping("/create-view")
@@ -18,7 +30,11 @@ public class PostController {
 	
 	// 메모 리스트
 	@GetMapping("/list-view")
-	public String memoList() {
+	public String memoList(Model model) {
+		
+		List<Post> memoList = postService.getPostList();
+		
+		model.addAttribute("memoList", memoList);
 		
 		return "post/list";
 		

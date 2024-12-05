@@ -1,5 +1,7 @@
 package com.dptcldpa.memo.post.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.dptcldpa.memo.post.domain.Post;
@@ -28,6 +30,12 @@ public class PostService {
 		} catch(Exception e) {
 			return false;
 		}
+		
+	}
+	
+	public List<Post> getPostList() {
+		
+		return postRepository.findAll();
 		
 	}
 }
