@@ -40,4 +40,11 @@ public class PostController {
 		
 	}
 	
+	@GetMapping("/detail-view")
+	public String memoDetail() {
+		
+		return "/post/detail";
+		
+	}
+	
 }
