@@ -33,9 +33,9 @@ public class PostService {
 		
 	}
 	
-	public List<Post> getPostList() {
+	public List<Post> getPostList(int userId) {
 		
-		return postRepository.findAll();
+		return postRepository.findByUserIdOrderByIdDesc(userId);
 		
 	}
 }

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.dptcldpa.memo.post.domain.Post;
 import com.dptcldpa.memo.post.service.PostService;
 
+import jakarta.servlet.http.HttpSession;
+
 @RequestMapping("/post")
 @Controller
 public class PostController {
@@ -30,9 +32,13 @@ public class PostController {
 	
 	// 메모 리스트
 	@GetMapping("/list-view")
-	public String memoList(Model model) {
+	public String memoList(
+			Model model
+			, HttpSession session) {
 		
-		List<Post> memoList = postService.getPostList();
+		int userId = (Integer)session.getAttribute("userId");
+		
+		List<Post> memoList = postService.getPostList(userId);
 		
 		model.addAttribute("memoList", memoList);
 		
