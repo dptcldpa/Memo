@@ -20,7 +20,7 @@
 					<tbody>
 						<tr th:each="memo:${memoList}">
 							<td th:text="${memo.id}">0</td>
-							<td th:text="${memo.title}">메모 작성중 테스트</td>
+							<td><a th:text="${memo.title}" th:href="|/post/detail-view?id=${memo.id}"|>메모 작성중 테스트</a></td>
 							<td th:text="${#temporals.format(memo.createdAt, 'yyyy-M-dd')}">2024-12-05</td>
 						</tr>
 					</tbody>
