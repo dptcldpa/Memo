@@ -1,6 +1,7 @@
 package com.dptcldpa.memo.post.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -36,6 +37,14 @@ public class PostService {
 	public List<Post> getPostList(int userId) {
 		
 		return postRepository.findByUserIdOrderByIdDesc(userId);
+		
+	}
+	
+	public Post getPost(int id) {
+		
+		Optional<Post> optionalPost = postRepository.findById(id);
+		
+		return optionalPost.orElse(null);
 		
 	}
 }

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dptcldpa.memo.post.domain.Post;
 import com.dptcldpa.memo.post.service.PostService;
@@ -47,9 +48,15 @@ public class PostController {
 	}
 	
 	@GetMapping("/detail-view")
-	public String memoDetail() {
+	public String memoDetail(
+			@RequestParam("id") int id
+			, Model model) {
 		
-		return "/post/detail";
+		Post memo = postService.getPost(id);
+		
+		model.addAttribute("memo", memo);
+		
+		return "post/detail";
 		
 	}
 	
