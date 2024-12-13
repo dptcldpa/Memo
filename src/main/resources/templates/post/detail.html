@@ -5,7 +5,7 @@
     layout:decorate="~{layout/default}">
     
 	    <section layout:fragment=contents class="contents d-flex justify-content-center">
-	    	<div class="memo-input my-4 p-5">
+	    	<div class="memo-input my-4 p-5" id="memoContents" th:data-post-id="{memo.id}">
 		    	<h2 class="text-center">메모 상세</h2>
 	    		
 	    		<input type="text" class="form-control mt-4" th:value="${memo.title}" id="titleInput" placeholder="제목을 입력하세요">
@@ -18,10 +18,48 @@
 		    		
 		    		<div>
 		    			<a href="/post/list-view" class="btn btn-secondary">목록으로</a>
-			    		<button type="button" class="btn btn-secondary" id="saveBtn">저장</button>
+			    		<button type="button" class="btn btn-secondary" id="saveBtn">수정</button>
 					</div>
 	    		</div>
 	    	</div>
 	    </section>
 
+		<script layout:fragment="script">
+		
+			$(document).ready(function() {
+				$("#saveBtn").on("click", function() {
+					
+					let title = $("#titleInput").val();
+					let contents = $("#contentsInput").val();
+					
+					if(title == "") {
+						alert("제목을 입력하세요");
+						return;
+					}
+					
+					if(contents == "") {
+						alert("내용을 입력하세요");
+						return;
+					}
+					
+					let id = $("#memoContents").data("post-id");
+					
+					$.ajax({
+						type:"put"
+						, url:"/post/create"
+						, data:{"id":id, "title":title, "contents":contents}
+						, success:function(response) {
+							if(response.result == "success") {
+								location.reload();
+							} else {
+								alert("수정 실패!");
+							}
+						}
+						, error:function() {
+							alert("수정 에러!");
+						}
+					});
+				});
+			});
+		</script>
 </html>
