@@ -75,4 +75,24 @@ public class PostService {
 		}
 		
 	}
+	
+	public boolean deletePost(int id) {
+		
+		Optional<Post> optionalPost = postRepository.findById(id);
+		
+		if(optionalPost.isPresent()) {
+			
+			Post post = optionalPost.get();
+			
+			FileManager.removeFile(post.getImagePath());
+			
+			postRepository.delete(post);
+			
+			return true;
+			
+		} else {
+			return false;
+		}
+		
+	}
 }
