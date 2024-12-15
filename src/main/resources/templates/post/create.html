@@ -11,7 +11,7 @@
 	    		<input type="text" class="form-control mt-4" id="titleInput" placeholder="제목을 입력하세요">
 	    		<textarea type="text" class="form-control mt-2" rows="5" id="contentsInput" placeholder="내용을 입력하세요"></textarea>
 	    		
-	    		<input type="file" class="mt-2" id="fielInput">
+	    		<input type="file" class="mt-2" id="fileInput">
 	    		
 	    		<div class="d-flex justify-content-between mt-4">
 	    			<a href="/post/list-view" class="btn btn-secondary">목록으로</a>
@@ -38,7 +38,7 @@
 						return;
 					}
 					
-					let formData = new Formdata();
+					let formData = new FormData();
 					
 					formData.append("title", title);
 					formData.append("contents", contents);
