@@ -11,6 +11,7 @@ public class MD5HashingEncoder {
 		String result = "";
 		
 		try {
+			
 			MessageDigest messageDigest = MessageDigest.getInstance("md5");
 			
 			byte[] bytes = message.getBytes();

@@ -16,6 +16,7 @@ public class UserService {
 		this.userRepository = userRepository;
 	}
 	
+	// 사용자 추가
 	public boolean addUser(
 			String loginId
 			, String password

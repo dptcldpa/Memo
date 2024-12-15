@@ -10,7 +10,7 @@
 				
 				<input type="text" class="form-control mt-4" id="idInput" placeholder="아이디">
 				<input type="password" class="form-control mt-2" id="passwordInput" placeholder="비밀번호">
-				<input type="password" class="form-control mt-2" id="passwordComfirmInput" placeholder="비밀번호 확인">
+				<input type="password" class="form-control mt-2" id="passwordConfirmInput" placeholder="비밀번호 확인">
 				<input type="text" class="form-control mt-2" id="nameInput" placeholder="이름">
 				<input type="text" class="form-control mt-2" id="emailInput" placeholder="이메일">
 				
@@ -19,11 +19,15 @@
 		</section>
 		
 		<script layout:fragment="script">
+		
 			$(document).ready(function() {
+				
+				// 회원가입
 				$("#joinBtn").on("click", function() {
+					
 					let id = $("#idInput").val();
 					let password = $("#passwordInput").val();
-					let passwordConfirm = $("#passwordComfirmInput").val();
+					let passwordConfirm = $("#passwordConfirmInput").val();
 					let name = $("#nameInput").val();
 					let email = $("#emailInput").val();
 					
@@ -72,5 +76,4 @@
 				
 			});
 		</script>
-
 </html>

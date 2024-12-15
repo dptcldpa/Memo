@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class UserController {
 	
+	// 회원가입
 	@GetMapping("/join-view")
 	public String inputJoin() {
 		
@@ -18,6 +19,7 @@ public class UserController {
 		
 	}
 	
+	// 로그인
 	@GetMapping("/login-view")
 	public String inputLogin() {
 		

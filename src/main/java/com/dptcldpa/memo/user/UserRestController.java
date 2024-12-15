@@ -25,6 +25,7 @@ public class UserRestController {
 		this.userService = userService;
 	}
 
+	// 회원가입
 	@PostMapping("/join")
 	public Map<String, String> join(
 			@RequestParam("loginId") String loginId
@@ -44,6 +45,7 @@ public class UserRestController {
 		
 	}
 	
+	// 로그인
 	@PostMapping("/login")
 	public Map<String, String> login(
 			@RequestParam("loginId") String loginId
