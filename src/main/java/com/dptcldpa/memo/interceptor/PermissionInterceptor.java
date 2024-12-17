@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-public class PermissionConterceptor implements HandlerInterceptor {
+public class PermissionInterceptor implements HandlerInterceptor {
 
 	@Override
 	public boolean preHandle(
@@ -32,13 +32,18 @@ public class PermissionConterceptor implements HandlerInterceptor {
 				
 				return false;
 			}
-		} 
-		
-		// 로그인이 되어있는 경우 사용자와 관련된 페이지 접근을 막는다.
-		// 메모 리스트 페이지로 이동
-		
-		
+		} else {
+			// 로그인이 되어있는 경우 사용자와 관련된 페이지 접근을 막는다.
+			// 메모 리스트 페이지로 이동
+			// /user 로 시작하는 url path 확인
+			if(uri.startsWith("/user")) {
+				response.sendRedirect("/post/list-view");
+				return false;
+			}
+		}
+
 		return true;
+		
 	}
 	
 }
